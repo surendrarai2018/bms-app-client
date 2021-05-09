@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import axios from "axios";
+import base_url from "../api/bootapi";
 
 export class Forgot extends Component {
 
@@ -10,7 +11,7 @@ export class Forgot extends Component {
             email: this.email
         };
 
-        axios.post('forgot', data).then(
+        axios.post(`${base_url}/forgot`, data).then(
             response => {
                 console.log(response);
             }

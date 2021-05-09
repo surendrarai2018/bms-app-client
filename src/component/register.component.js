@@ -1,20 +1,20 @@
-import axios from "axios";
 import React, { Component } from "react";
-
+import axios from "axios";
+import base_url from "../api/bootapi";
 export default class Register extends Component {
     state = {};
 
   handleSubmit = (e) => {
     e.preventDefault();
     const data = {
-      Username: this.Username,
+      userName: this.userName,
       email: this.email,
       password: this.password,
       confirmPassword: this.confirmPassword,
     };
     console.log(data);
 
-    axios.post(`register`, data).then(
+    axios.post(`${base_url}/register`, data).then(
       response => {
         console.log(response);
         console.log("success");
@@ -47,12 +47,12 @@ export default class Register extends Component {
         <h3>Registration</h3>
 
         <div className="form-group">
-          <label>Username</label>
+          <label>userName</label>
           <input
             type="text"
             className="form-control"
             placeholder="User Name"
-            onChange={(e) => (this.Username = e.target.value)}
+            onChange={(e) => (this.userName = e.target.value)}
           />
         </div>
 

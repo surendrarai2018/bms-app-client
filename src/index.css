@@ -90,6 +90,11 @@ html,
   min-height: 200px;
 }
 
+.img {
+  vertical-align: middle;
+  width: 36px;
+}
+
 .jumb-img {
   width: 100%;
   object-fit: contain !important;

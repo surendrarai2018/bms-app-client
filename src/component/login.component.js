@@ -1,4 +1,5 @@
 import axios from "axios";
+import base_url from "../api/bootapi";
 import React, { Component } from "react";
 import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
@@ -13,7 +14,7 @@ export default class Login extends Component {
       password: this.password
     };
     //console.log(data);
-    axios.post(`login`, data).then(
+    axios.post(`${base_url}/login`, data).then(
       response => {
         localStorage.setItem("token", response.data.token);
         this.setState({

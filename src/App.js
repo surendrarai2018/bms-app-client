@@ -8,13 +8,14 @@ import Register from "./component/register.component";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Forgot } from "./component/forgot.component";
 import { Reset } from "./component/reset.component";
-import axiosInstance from "./axios.global";
+import axios from "axios";
 import bankImage from './assets/co-op-bank.jpg';
+import base_url from "./api/bootapi";
 
 export default class App extends Component {
   state = {};
   componentDidMount() {
-    axiosInstance.get(`user`).then(
+    axios.post(`${base_url}/user`).then(
         res => {
             this.setUser(res.data);
         },
