@@ -1,9 +1,10 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:9090/'
+    baseURL: 'http://localhost:8080/'
 });
-axios.defaults.headers.common['Authorization'] = 'Bearer' + localStorage.getItem('token');
+console.log()
+axiosInstance.defaults.headers.common['Authorization'] = localStorage.getItem('token');
 
 // 
 // 401 // dispatch(logout())
